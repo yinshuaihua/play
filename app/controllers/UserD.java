@@ -5,6 +5,8 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2016/9/6 0006.
  */
@@ -17,8 +19,10 @@ public class UserD extends Controller {
         user.setUserName("yin");
         user.setUserPassword("yin056201");
         user.save();
-
-        res.put("err",0);
+        models.UserD getUser = new models.UserD();
+        List<models.UserD> users = getUser.findByName("yinshuaihua");
+        String email = users.get(0).getUserEmail();
+        res.put("email",email);
         return ok(res);
     }
 
