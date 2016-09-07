@@ -16,7 +16,8 @@ public class UserD extends Controller {
     public Result getUserList() {
         ObjectNode res = Json.newObject();
         models.UserD user = new models.UserD();
-        user.setUserName("yin");
+        user.setUserName("yinshuaihua");
+        user.setUserEmail("809808232@qq.com");
         user.setUserPassword("yin056201");
         user.save();
         models.UserD getUser = new models.UserD();
