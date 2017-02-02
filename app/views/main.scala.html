@@ -10,7 +10,7 @@
 <html lang="en">
     <head>
         @* Here's where we render the page title `String`. *@
-    <title>嗨，这里是尹帅华的空间
+    <title>嗨，这里是LazyCat的私人空间
     </title>
 
         @*<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -34,25 +34,25 @@
                 background-color: #a5d2da;
                 opacity: 0.4;
                 padding: 15px;
-                width: 100%;">嗨，这里是尹帅华的个人空间</h1>
+                width: 100%;">嗨，这里是LazyCat的私人空间</h1>
         </div>
         <div>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/">空间首页</a>
+                        <a class="navbar-brand" href="/">首页</a>
                     </div>
                     <div>
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/">个人中心</a></li>
-                            <li><a href="/">邮箱</a></li>
+                            <li class="active"><a href="/">发帖</a></li>
+                            <li><a href="/">热门帖子</a></li>
                             <li class="dropdown">
                                 <a href="/" class="dropdown-toggle" data-toggle="dropdown">
                                     设置
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/">登录</a></li>
+                                    <li><a data-toggle="modal" data-target="#logInModal" >登录</a></li>
                                     <li><a href="/">登出</a></li>
                                     <li class="divider"></li>
                                     <li><a href="/">帮助</a></li>
@@ -145,6 +145,38 @@
                 <li><a style="color: #333333" href='http://www.cisau.com.cn/html/list_1542.html'>双体系卓越人才教育基地</a></li>
                 <li><a style="color: #333333" href='#'>研发中心</a></li>
             </ul>
+        </div>
+            <!--登录 模态框（Modal） -->
+        <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">请您登录 ^_^</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div style="padding: 100px 100px 10px;">
+                            <form class="bs-example bs-example-form" role="form">
+                                <div class="input-group">
+                                    <span class="input-group-addon">用户名</span>
+                                        <input type="text" class="form-control" placeholder="手机号或邮箱">
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon">密码</span>
+                                    <input type="text" class="form-control" placeholder="请输入密码">
+                                </div>
+                                <br>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary">提交更改</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
         </div>
     </div>
     </body>
