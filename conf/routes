@@ -16,6 +16,7 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 
 #my application interface
-GET     /userd/get_user_list        controllers.UserD.getUserList()
-POST    /userd/userRegister         controllers.UserD.userRegister()
-GET     /userd/registerPage         controllers.UserD.registerPage()
+GET    /userd/get_user_list        controllers.UserD.getUserList()
+POST   /userd/userRegister         controllers.UserD.userRegister()
+GET    /userd/registerPage         controllers.UserD.registerPage()
+GET    /userd/login                controllers.UserD.login()

@@ -9,10 +9,13 @@
     <script type="text/javascript">
             function userRegister(){
                 window.location.href="/userd/registerPage";
-              @*  $.ajax({
-                    url : "/userd/registerPage",
-                    type : "GET",
-                    data : {
+              @*  var nickname = document.getElementById(userInfo).value;
+                $.ajax({
+                    url : "/userd/userRegister",
+                    type : "POST",
+                    data : {  nickname: nickname,
+                              user_email : userEmail,
+                              user_password : userPassword
                     },
                     success:function(data){
                         console.log(data);
@@ -20,8 +23,8 @@
                     error: function(jqXHR, textStatus, errorThrown){
                         console.log(jqXHR, textStatus, errorThrown);
                     }
-                });*@
-
+                });
+                *@
             }
     </script>
 }
@@ -177,24 +180,26 @@
                     </div>
                     <div class="modal-body">
                         <div style="padding: 100px 100px 10px;">
-                            <form class="bs-example bs-example-form" role="form">
+
+                            <form  method="POST" action="/userd/userRegister" class="bs-example bs-example-form" role="form">
                                 <div class="input-group">
                                     <span class="input-group-addon">用户名</span>
-                                        <input type="text" class="form-control" placeholder="手机号或邮箱">
+                                        <input name="nickname" type="text" class="form-control" placeholder="手机号或邮箱">
                                 </div>
                                 <br>
                                 <div class="input-group">
                                     <span class="input-group-addon">密码</span>
-                                    <input type="text" class="form-control" placeholder="请输入密码">
+                                    <input name="userPassword" type="text" class="form-control" placeholder="请输入密码">
                                 </div>
                                 <br>
-
+                                <button type="button" class="btn btn-primary" onclick="userRegister()">注册</button>
+                                <button type="submit" class="btn btn-primary">确认</button>
                             </form>
+
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="userRegister()">注册</button>
-                        <button type="button" class="btn btn-primary">提交更改</button>
+
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal -->
