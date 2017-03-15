@@ -67,4 +67,8 @@ public class UserD extends Model {
     public static List<UserD> findByName(String userName){
         return find.where().eq("user_name",userName).findList();
     }
+
+    public static List<UserD> findByEmail(String userEmail){
+        return find.where().eq("user_email",userEmail).findList();
+    }
 }

@@ -54,7 +54,22 @@ public class UserD extends Controller {
 
     //登录接口
     public Result login(){
-        return ok(views.html.registerPage.render());
+        DynamicForm requestData = Form.form().bindFromRequest();//绑定Form表单数据
+        ObjectNode res = Json.newObject();//新建一个res对象存储返回信息
+        String htmlAccount = requestData.get("account");//nickName or email
+        String htmlUserPassword = requestData.get("userPassword");//user's main password
+        Logger.debug("user information"+"---"+htmlAccount+"---"+htmlUserPassword);//return user information to debug
+        models.UserD getUserInfo = new  models.UserD();
+        List<models.UserD> userEmail = getUserInfo.findByEmail(htmlAccount);//只能通过邮箱登录
+        models.UserD user = userEmail.get(0);//只获取匹配到的第一个用户
+        String dbUserEmail = user.userEmail;//从数据库拉取相关信息
+        String dbUserPassword = user.userPassword;
+        Logger.debug("db email password "+"---"+dbUserEmail+"---"+dbUserPassword);
+        //对比账户和密码
+        if (htmlAccount.equals(dbUserEmail)  && htmlUserPassword.equals(dbUserPassword)  ){
+            //登录成功
+            return ok(views.html.loginOk.render());
+        }else return ok(views.html.loginBad.render());
     }
 
 }

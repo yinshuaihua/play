@@ -181,15 +181,15 @@
                     <div class="modal-body">
                         <div style="padding: 100px 100px 10px;">
 
-                            <form  method="POST" action="/userd/userRegister" class="bs-example bs-example-form" role="form">
+                            <form  method="POST" action="/userd/login" class="bs-example bs-example-form" role="form">
                                 <div class="input-group">
                                     <span class="input-group-addon">用户名</span>
-                                        <input name="nickname" type="text" class="form-control" placeholder="手机号或邮箱">
+                                        <input name="account" type="text" class="form-control" placeholder="请输入邮箱">
                                 </div>
                                 <br>
                                 <div class="input-group">
                                     <span class="input-group-addon">密码</span>
-                                    <input name="userPassword" type="text" class="form-control" placeholder="请输入密码">
+                                    <input name="userPassword" type="password" class="form-control" placeholder="请输入密码">
                                 </div>
                                 <br>
                                 <button type="button" class="btn btn-primary" onclick="userRegister()">注册</button>
